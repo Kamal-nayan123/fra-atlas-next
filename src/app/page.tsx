@@ -1,103 +1,146 @@
-import Image from "next/image";
+"use client";
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+	Chart as ChartJS,
+	CategoryScale,
+	LinearScale,
+	BarElement,
+	ArcElement,
+	Tooltip,
+	Legend,
+	PointElement,
+	LineElement,
+	RadialLinearScale,
+} from "chart.js";
+import { Bar, Doughnut } from "react-chartjs-2";
+
+ChartJS.register(
+	CategoryScale,
+	LinearScale,
+	BarElement,
+	ArcElement,
+	Tooltip,
+	Legend,
+	PointElement,
+	LineElement,
+	RadialLinearScale
+);
+
+const kpis = [
+	{ label: "FRA Title Distribution Rate", value: 49.02, target: 75, trend: "improving" },
+	{ label: "Document Digitization Progress", value: 23.4, target: 100, trend: "steady" },
+	{ label: "Scheme Convergence Rate", value: 34.7, target: 85, trend: "improving" },
+	{ label: "Village Atlas Coverage", value: 63.2, target: 100, trend: "rapid" },
+];
+
+const stateBarData = {
+	labels: ["Madhya Pradesh", "Odisha", "Telangana", "Tripura"],
+	datasets: [
+		{
+			label: "Claims Received",
+			data: [627000, 720000, 655000, 128032],
+			backgroundColor: "#1FB8CD",
+		},
+		{
+			label: "Titles Distributed",
+			data: [294000, 461013, 230735, 127931],
+			backgroundColor: "#FFC185",
+		},
+	],
+};
+
+const stateBarOptions = {
+	responsive: true,
+	maintainAspectRatio: false,
+	plugins: { legend: { position: "top" as const } },
+	scales: {
+		y: {
+			beginAtZero: true,
+			ticks: {
+				callback: function(value: number | string) {
+					const v = typeof value === "string" ? parseFloat(value) : value;
+					return `${Math.round((v as number) / 1000)}K`;
+				},
+			},
+		},
+	},
+};
+
+const claimsDoughnutData = {
+	labels: ["Individual Claims", "Community Claims"],
+	datasets: [
+		{
+			data: [4911495, 211609],
+			backgroundColor: ["#1FB8CD", "#FFC185"],
+			borderWidth: 2,
+			borderColor: "#fff",
+		},
+	],
+};
+
+const claimsDoughnutOptions = {
+	responsive: true,
+	maintainAspectRatio: false,
+	plugins: { legend: { position: "bottom" as const } },
+};
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+	return (
+		<div className="container mx-auto px-4 py-6">
+			<div className="mb-6">
+				<h1 className="h3 m-0">FRA Implementation Dashboard</h1>
+				<p className="text-muted m-0 mt-2">AI-Powered Forest Rights Act Monitoring System</p>
+			</div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+			<div className="row g-3 mb-4">
+				{kpis.map((kpi, idx) => (
+					<div className="col-12 col-md-6 col-lg-3" key={idx}>
+						<Card>
+							<CardHeader>
+								<CardTitle className="fs-6">{kpi.label}</CardTitle>
+								<CardDescription>Target: {kpi.target}%</CardDescription>
+							</CardHeader>
+							<CardContent>
+								<div className="d-flex align-items-center justify-content-between">
+									<div className="display-6 fw-bold">{kpi.value}%</div>
+									<Badge variant="secondary">{kpi.trend}</Badge>
+								</div>
+							</CardContent>
+						</Card>
+					</div>
+				))}
+			</div>
+
+			<div className="row g-3">
+				<div className="col-12 col-lg-8">
+					<Card>
+						<CardHeader>
+							<CardTitle className="fs-6">State-wise FRA Implementation Progress</CardTitle>
+							<CardDescription>Claims received vs titles distributed</CardDescription>
+						</CardHeader>
+						<CardContent>
+							<div style={{height: 400}}>
+								<Bar data={stateBarData} options={stateBarOptions} />
+							</div>
+						</CardContent>
+					</Card>
+				</div>
+				<div className="col-12 col-lg-4">
+					<Card>
+						<CardHeader>
+							<CardTitle className="fs-6">Claims Distribution</CardTitle>
+							<CardDescription>Individual vs Community claims</CardDescription>
+						</CardHeader>
+						<CardContent>
+							<div style={{height: 400}}>
+								<Doughnut data={claimsDoughnutData} options={claimsDoughnutOptions} />
+							</div>
+						</CardContent>
+					</Card>
+				</div>
+			</div>
+		</div>
+	);
 }

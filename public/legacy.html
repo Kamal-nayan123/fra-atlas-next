@@ -1,0 +1,487 @@
+<!— Legacy FRA Atlas HTML body content only —>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	<div class="container">
+		<a class="navbar-brand" href="#dashboard">
+			<i class="fas fa-map-marked-alt me-2"></i>
+			FRA Atlas
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav me-auto">
+				<li class="nav-item">
+					<a class="nav-link active" href="#dashboard" data-section="dashboard">Dashboard</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#atlas" data-section="atlas">FRA Atlas</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#assets" data-section="assets">AI Asset Mapping</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#dss" data-section="dss">Decision Support</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#documents" data-section="documents">Document AI</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#analytics" data-section="analytics">Analytics</a>
+				</li>
+			</ul>
+			<div class="navbar-nav">
+				<div class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+						<i class="fas fa-user-circle me-1"></i>
+						MoTA Admin
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+						<li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+					</ul>
+				</div>
+				<button class="btn btn-outline-light btn-sm ms-2" id="langToggle">
+					हिन्दी
+				</button>
+			</div>
+		</div>
+	</div>
+</nav>
+<main id="mainContent">
+	<section id="dashboard" class="section active">
+		<div class="container-fluid py-4">
+			<div class="row mb-4">
+				<div class="col-12">
+					<div class="d-flex justify-content-between align-items-center">
+						<div>
+							<h1 class="h3 mb-1">FRA Implementation Dashboard</h1>
+							<p class="text-muted">AI-Powered Forest Rights Act Monitoring System</p>
+						</div>
+						<div class="d-flex gap-2">
+							<select class="form-select" id="stateFilter">
+								<option value="">All States</option>
+								<option value="madhya_pradesh">Madhya Pradesh</option>
+								<option value="odisha">Odisha</option>
+								<option value="telangana">Telangana</option>
+								<option value="tripura">Tripura</option>
+							</select>
+							<button class="btn btn-primary">
+								<i class="fas fa-download me-1"></i>Export Report
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-4">
+				<div class="col-lg-3 col-md-6 mb-3">
+					<div class="card metric-card">
+						<div class="card-body">
+							<div class="d-flex align-items-center">
+								<div class="metric-icon bg-primary">
+									<i class="fas fa-file-alt text-white"></i>
+								</div>
+								<div class="ms-3">
+									<h6 class="text-muted mb-1">Total Claims</h6>
+									<h3 class="mb-0" id="totalClaims">5,123,104</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-3">
+					<div class="card metric-card">
+						<div class="card-body">
+							<div class="d-flex align-items-center">
+								<div class="metric-icon bg-success">
+									<i class="fas fa-certificate text-white"></i>
+								</div>
+								<div class="ms-3">
+									<h6 class="text-muted mb-1">Titles Distributed</h6>
+									<h3 class="mb-0" id="titlesDistributed">2,511,375</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-3">
+					<div class="card metric-card">
+						<div class="card-body">
+							<div class="d-flex align-items-center">
+								<div class="metric-icon bg-warning">
+									<i class="fas fa-clock text-white"></i>
+								</div>
+								<div class="ms-3">
+									<h6 class="text-muted mb-1">Pending Cases</h6>
+									<h3 class="mb-0" id="pendingCases">14.63%</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-3">
+					<div class="card metric-card">
+						<div class="card-body">
+							<div class="d-flex align-items-center">
+								<div class="metric-icon bg-info">
+									<i class="fas fa-users text-white"></i>
+								</div>
+								<div class="ms-3">
+									<h6 class="text-muted mb-1">Villages Mapped</h6>
+									<h3 class="mb-0" id="villagesMapped">63.2%</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-4">
+				<div class="col-lg-8">
+					<div class="card">
+						<div class="card-header">
+							<h6 class="mb-0">State-wise FRA Implementation Progress</h6>
+						</div>
+						<div class="card-body">
+							<div class="chart-container" style="position: relative; height: 400px;">
+								<canvas id="stateProgressChart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-header">
+							<h6 class="mb-0">Claims Distribution</h6>
+						</div>
+						<div class="card-body">
+							<div class="chart-container" style="position: relative; height: 400px;">
+								<canvas id="claimsDistChart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-header">
+							<h6 class="mb-0">DAJGUA Scheme Convergence</h6>
+						</div>
+						<div class="card-body">
+							<div class="row" id="schemeCards"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="atlas" class="section">
+		<div class="container-fluid h-100">
+			<div class="row h-100">
+				<div class="col-lg-3 sidebar">
+					<div class="p-3">
+						<h5>FRA Atlas Controls</h5>
+						<div class="mb-3">
+							<h6>Map Layers</h6>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="ifrLayer" checked>
+								<label class="form-check-label" for="ifrLayer">Individual Forest Rights (IFR)</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="cfrLayer" checked>
+								<label class="form-check-label" for="cfrLayer">Community Forest Rights (CFR)</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="villageLayer" checked>
+								<label class="form-check-label" for="villageLayer">Village Boundaries</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="assetLayer">
+								<label class="form-check-label" for="assetLayer">AI Asset Mapping</label>
+							</div>
+						</div>
+						<div class="mb-3">
+							<h6>Search Villages</h6>
+							<input type="text" class="form-control" id="villageSearch" placeholder="Enter village name...">
+						</div>
+						<div class="mb-3">
+							<h6>Filters</h6>
+							<select class="form-select mb-2" id="stateMapFilter">
+								<option value="">All States</option>
+								<option value="Madhya Pradesh">Madhya Pradesh</option>
+								<option value="Odisha">Odisha</option>
+								<option value="Telangana">Telangana</option>
+								<option value="Tripura">Tripura</option>
+							</select>
+							<select class="form-select" id="districtFilter">
+								<option value="">All Districts</option>
+							</select>
+						</div>
+						<div class="map-legend">
+							<h6>Legend</h6>
+							<div class="legend-item"><span class="legend-color ifr-color"></span><small>IFR Villages</small></div>
+							<div class="legend-item"><span class="legend-color cfr-color"></span><small>CFR Villages</small></div>
+							<div class="legend-item"><span class="legend-color pending-color"></span><small>Pending Claims</small></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-9 p-0">
+					<div id="fraMap" style="height: 100vh;"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="assets" class="section">
+		<div class="container-fluid py-4">
+			<div class="row mb-4">
+				<div class="col-12">
+					<h2>AI-Powered Asset Mapping</h2>
+					<p class="text-muted">Satellite imagery analysis and land-use classification for FRA villages</p>
+				</div>
+			</div>
+			<div class="row mb-4">
+				<div class="col-lg-3 col-md-6 mb-3">
+					<div class="card">
+						<div class="card-body text-center">
+							<h4 class="text-success">96.3%</h4>
+							<small class="text-muted">Agricultural Land Detection</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-3">
+					<div class="card">
+						<div class="card-body text-center">
+							<h4 class="text-success">94.7%</h4>
+							<small class="text-muted">Forest Cover Classification</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-3">
+					<div class="card">
+						<div class="card-body text-center">
+							<h4 class="text-success">98.1%</h4>
+							<small class="text-muted">Water Bodies Detection</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-3">
+					<div class="card">
+						<div class="card-body text-center">
+							<h4 class="text-warning">91.5%</h4>
+							<small class="text-muted">Infrastructure Mapping</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="card">
+						<div class="card-header"><h6 class="mb-0">Satellite Image Analysis</h6></div>
+						<div class="card-body">
+							<div class="asset-demo-container">
+								<div class="demo-image">
+									<div class="placeholder-image">
+										<i class="fas fa-satellite-dish fa-3x text-muted"></i>
+										<p class="mt-2">Satellite Image Processing</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="card">
+						<div class="card-header"><h6 class="mb-0">AI Classification Results</h6></div>
+						<div class="card-body">
+							<div class="chart-container" style="position: relative; height: 300px;">
+								<canvas id="assetClassificationChart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="dss" class="section">
+		<div class="container-fluid py-4">
+			<div class="row mb-4">
+				<div class="col-12">
+					<h2>Decision Support System</h2>
+					<p class="text-muted">AI-enhanced scheme convergence and intervention prioritization</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-header"><h6 class="mb-0">Village Selection</h6></div>
+						<div class="card-body">
+							<form id="dssForm">
+								<div class="mb-3">
+									<label class="form-label">State</label>
+									<select class="form-select" id="dssState" required>
+										<option value="">Select State</option>
+										<option value="Madhya Pradesh">Madhya Pradesh</option>
+										<option value="Odisha">Odisha</option>
+										<option value="Telangana">Telangana</option>
+										<option value="Tripura">Tripura</option>
+									</select>
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Village</label>
+									<select class="form-select" id="dssVillage" required>
+										<option value="">Select Village</option>
+									</select>
+								</div>
+								<button type="submit" class="btn btn-primary w-100"><i class="fas fa-search me-1"></i>Get Recommendations</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-8">
+					<div class="card">
+						<div class="card-header"><h6 class="mb-0">Village Profile & Recommendations</h6></div>
+						<div class="card-body" id="dssResults">
+							<div class="text-center text-muted py-5">
+								<i class="fas fa-chart-line fa-3x mb-3"></i>
+								<p>Select a village to view AI-powered recommendations</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="documents" class="section">
+		<div class="container-fluid py-4">
+			<div class="row mb-4">
+				<div class="col-12">
+					<h2>AI Document Processing</h2>
+					<p class="text-muted">OCR and NER for FRA document digitization</p>
+				</div>
+			</div>
+			<div class="row mb-4">
+				<div class="col-lg-4 col-md-6 mb-3">
+					<div class="card">
+						<div class="card-body text-center">
+							<h4 class="text-success">97.8%</h4>
+							<small class="text-muted">English OCR Accuracy</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-3">
+					<div class="card">
+						<div class="card-body text-center">
+							<h4 class="text-success">94.2%</h4>
+							<small class="text-muted">Hindi OCR Accuracy</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-3">
+					<div class="card">
+						<div class="card-body text-center">
+							<h4 class="text-info">23.4%</h4>
+							<small class="text-muted">Digitization Progress</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="card">
+						<div class="card-header"><h6 class="mb-0">Document Upload & Processing</h6></div>
+						<div class="card-body">
+							<div class="document-upload">
+								<div class="upload-area p-4 border-2 border-dashed rounded text-center">
+									<i class="fas fa-cloud-upload-alt fa-3x text-muted mb-3"></i>
+									<p class="mb-2">Drop FRA documents here or click to upload</p>
+									<small class="text-muted">Supports PDF, JPG, PNG formats</small>
+									<input type="file" class="d-none" id="documentUpload" multiple accept=".pdf,.jpg,.png">
+								</div>
+							</div>
+							<div class="mt-3">
+								<h6>Supported Document Types:</h6>
+								<div class="document-types">
+									<span class="badge bg-secondary me-1">FRA Applications</span>
+									<span class="badge bg-secondary me-1">Title Deeds</span>
+									<span class="badge bg-secondary me-1">Revenue Records</span>
+									<span class="badge bg-secondary me-1">Survey Records</span>
+									<span class="badge bg-secondary me-1">CFR Management Plans</span>
+									<span class="badge bg-secondary">Rejection Orders</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="card">
+						<div class="card-header"><h6 class="mb-0">Extracted Information</h6></div>
+						<div class="card-body">
+							<div class="extracted-data" id="extractedData">
+								<div class="text-center text-muted py-4">
+									<i class="fas fa-file-search fa-3x mb-3"></i>
+									<p>Upload a document to see AI extraction results</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="analytics" class="section">
+		<div class="container-fluid py-4">
+			<div class="row mb-4">
+				<div class="col-12">
+					<h2>Monitoring & Analytics</h2>
+					<p class="text-muted">Comprehensive FRA implementation tracking and insights</p>
+				</div>
+			</div>
+			<div class="row mb-4">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-header"><h6 class="mb-0">Key Performance Indicators</h6></div>
+						<div class="card-body">
+							<div class="row" id="kpiCards"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 mb-4">
+					<div class="card">
+						<div class="card-header"><h6 class="mb-0">Implementation Timeline</h6></div>
+						<div class="card-body">
+							<div class="chart-container" style="position: relative; height: 300px;">
+								<canvas id="timelineChart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 mb-4">
+					<div class="card">
+						<div class="card-header"><h6 class="mb-0">Village Coverage by State</h6></div>
+						<div class="card-body">
+							<div class="chart-container" style="position: relative; height: 300px;">
+								<canvas id="coverageChart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+<div class="modal fade" id="villageModal" tabindex="-1">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="villageModalTitle">Village Details</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body" id="villageModalBody"></div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="viewDSSBtn">View DSS Recommendations</button>
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div> 
