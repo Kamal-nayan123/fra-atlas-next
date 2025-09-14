@@ -1,8 +1,10 @@
+"use client";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Navigation } from "@/components/navigation";
+import { usePathname } from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,16 +16,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "FRA Atlas - WebGIS DSS",
-  description: "AI-Powered FRA Atlas migrated to Next.js",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const showNav = pathname !== '/login';
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -36,7 +36,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navigation />
+          {showNav && <Navigation />}
           <main className="bg-background text-foreground min-h-screen">
             {children}
           </main>
