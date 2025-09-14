@@ -754,7 +754,7 @@ function handleFileSelect(e) {
     processDocuments(files);
 }
 
-function processDocuments(files) {
+function processDocuments() {
     const extractedDataDiv = document.getElementById('extractedData');
     if (!extractedDataDiv) return;
     
@@ -941,24 +941,6 @@ function toggleLanguage() {
     
     // In a real application, this would switch all UI text
     console.log('Language switched to:', currentLanguage);
-}
-
-// Utility Functions
-function formatNumber(num) {
-    if (num >= 1000000) {
-        return (num / 1000000).toFixed(1) + 'M';
-    } else if (num >= 1000) {
-        return (num / 1000).toFixed(0) + 'K';
-    }
-    return num.toString();
-}
-
-function showLoading(element) {
-    if (element) element.classList.add('loading');
-}
-
-function hideLoading(element) {
-    if (element) element.classList.remove('loading');
 }
 
 // Make showVillageDetails globally accessible for popup buttons
