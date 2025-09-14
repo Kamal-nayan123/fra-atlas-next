@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
 	Chart as ChartJS,
 	CategoryScale,
@@ -15,6 +15,7 @@ import {
 } from "chart.js";
 import { Bar, Doughnut } from "react-chartjs-2";
 import { FileText, BadgeCheck, Clock, Users, Download } from "lucide-react";
+import { useTheme } from "@/components/ui/theme-provider";
 
 ChartJS.register(
 	CategoryScale,
@@ -51,23 +52,6 @@ const stateBarData = {
 	],
 };
 
-const stateBarOptions = {
-	responsive: true,
-	maintainAspectRatio: false,
-	plugins: { legend: { position: "top" as const } },
-	scales: {
-		y: {
-			beginAtZero: true,
-			ticks: {
-				callback: function(value: number | string) {
-					const v = typeof value === "string" ? parseFloat(value) : value;
-					return `${Math.round((v as number) / 1000)}K`;
-				},
-			},
-		},
-	},
-};
-
 const claimsDoughnutData = {
 	labels: ["Individual Claims", "Community Claims"],
 	datasets: [
@@ -75,15 +59,8 @@ const claimsDoughnutData = {
 			data: [4911495, 211609],
 			backgroundColor: ["#1FB8CD", "#FFC185"],
 			borderWidth: 2,
-			borderColor: "#fff",
 		},
 	],
-};
-
-const claimsDoughnutOptions = {
-	responsive: true,
-	maintainAspectRatio: false,
-	plugins: { legend: { position: "bottom" as const } },
 };
 
 const dajguaSchemes = [
@@ -96,6 +73,43 @@ const dajguaSchemes = [
 
 
 export default function Home() {
+    const { theme } = useTheme();
+
+    const stateBarOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { position: "top" as const, labels: { color: theme === 'dark' ? 'white' : 'black' } } },
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    callback: function(value: number | string) {
+                        const v = typeof value === "string" ? parseFloat(value) : value;
+                        return `${Math.round((v as number) / 1000)}K`;
+                    },
+                    color: theme === 'dark' ? 'white' : 'black',
+                },
+                grid: {
+                    color: theme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
+                }
+            },
+            x: {
+                ticks: {
+                    color: theme === 'dark' ? 'white' : 'black',
+                },
+                grid: {
+                    color: theme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
+                }
+            }
+        },
+    };
+
+    const claimsDoughnutOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { position: "bottom" as const, labels: { color: theme === 'dark' ? 'white' : 'black' } } },
+    };
+
 	return (
 		<div className="container mx-auto px-4 py-6">
 			<div className="flex justify-between items-center mb-6">
@@ -139,7 +153,6 @@ export default function Home() {
 					<Card>
 						<CardHeader>
 							<CardTitle>State-wise FRA Implementation Progress</CardTitle>
-							<CardDescription>Claims received vs titles distributed</CardDescription>
 						</CardHeader>
 						<CardContent>
 							<div style={{height: 400}}>
@@ -152,11 +165,10 @@ export default function Home() {
 					<Card>
 						<CardHeader>
 							<CardTitle>Claims Distribution</CardTitle>
-							<CardDescription>Individual vs Community claims</CardDescription>
 						</CardHeader>
 						<CardContent>
 							<div style={{height: 400}}>
-								<Doughnut data={claimsDoughnutData} options={claimsDoughnutOptions} />
+								<Doughnut data={{...claimsDoughnutData, datasets: claimsDoughnutData.datasets.map(ds => ({...ds, borderColor: theme === 'dark' ? '#0f172a' : '#fff'}))}} options={claimsDoughnutOptions} />
 							</div>
 						</CardContent>
 					</Card>

@@ -3,13 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Map, UserCircle } from "lucide-react";
+import { ThemeToggle } from "./ui/theme-toggle";
 
 const navLinks = [
   { href: "/", label: "Dashboard" },
   { href: "/atlas", label: "FRA Atlas" },
-  { href: "/assets", label: "AI Asset Mapping" },
   { href: "/dss", label: "Decision Support" },
-  { href: "/documents", label: "Document AI" },
   { href: "/analytics", label: "Analytics" },
 ];
 
@@ -49,6 +48,7 @@ export function Navigation() {
               </button>
               {/* Dropdown would go here */}
             </div>
+            <ThemeToggle />
             <button className="px-3 py-2 rounded-md text-sm font-medium border border-primary-foreground/50 hover:bg-primary-foreground/10">
               हिन्दी
             </button>

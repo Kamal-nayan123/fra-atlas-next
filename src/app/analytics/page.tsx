@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, PointElement, LineElement, Tooltip, Legend } from 'chart.js';
 import { Bar, Line } from 'react-chartjs-2';
 import { ArrowUp, Minus, ArrowDown } from 'lucide-react';
+import { useTheme } from '@/components/ui/theme-provider';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, PointElement, LineElement, Tooltip, Legend);
 
@@ -42,6 +43,24 @@ const TrendIcon = ({ trend }: { trend: string }) => {
 };
 
 export default function AnalyticsPage() {
+    const { theme } = useTheme();
+
+    const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: theme === 'dark' ? 'white' : 'black' } } },
+        scales: {
+            y: {
+                ticks: { color: theme === 'dark' ? 'white' : 'black' },
+                grid: { color: theme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)' }
+            },
+            x: {
+                ticks: { color: theme === 'dark' ? 'white' : 'black' },
+                grid: { color: theme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)' }
+            }
+        }
+    };
+
 	return (
 		<div className="container mx-auto px-4 py-6">
 			<div className="mb-6">
@@ -77,7 +96,7 @@ export default function AnalyticsPage() {
                     </CardHeader>
                     <CardContent>
                         <div style={{height: 300}}>
-                            <Line data={timelineData} options={{ responsive: true, maintainAspectRatio: false }} />
+                            <Line data={timelineData} options={chartOptions} />
                         </div>
                     </CardContent>
                 </Card>
@@ -87,7 +106,7 @@ export default function AnalyticsPage() {
                     </CardHeader>
 					<CardContent>
 						<div style={{height: 300}}>
-							<Bar data={coverageData} options={{ responsive: true, maintainAspectRatio: false }} />
+							<Bar data={coverageData} options={chartOptions} />
 						</div>
 					</CardContent>
 				</Card>
