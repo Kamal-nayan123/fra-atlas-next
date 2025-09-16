@@ -1,0 +1,17 @@
+{
+  "Navigation": {
+    "dashboard": "Dashboard",
+    "atlas": "FRA Atlas",
+    "dss": "Decision Support",
+    "analytics": "Analytics"
+  },
+  "Login": {
+    "title": "Login to FRA Atlas",
+    "description": "Enter your credentials to access the dashboard",
+    "emailLabel": "Email or Phone",
+    "passwordLabel": "Password",
+    "roleLabel": "Role",
+    "rolePlaceholder": "Select your role",
+    "loginButton": "Login"
+  }
+}
