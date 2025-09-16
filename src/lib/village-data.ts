@@ -1,4 +1,6 @@
-import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = [
+import { Village } from '@/lib/types';
+
+export const villageData: Village[] = [
     {
         "id": 1,
         "name": "Village 1",
