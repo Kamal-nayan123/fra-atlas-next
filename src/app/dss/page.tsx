@@ -1,17 +1,10 @@
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
 import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 import { Village } from "@/lib/types";
-
-const villages: Village[] = [
-    { id: 1, name: "Jhirkapur", state: "Madhya Pradesh", district: "Dindori", block: "Karanjia", tribal_population: 890, total_population: 1200, ifr_pattas: 45, cfr_pattas: 2, schemes_eligible: ["PM-KISAN", "Jal Jeevan Mission", "MGNREGA"], priority_interventions: ["Water infrastructure", "Road connectivity"] },
-    { id: 2, name: "Bamungaon", state: "Tripura", district: "Khowai", block: "Kalyanpur", tribal_population: 567, total_population: 743, ifr_pattas: 34, cfr_pattas: 1, schemes_eligible: ["PM-KISAN", "PM Awas Yojana", "Ayushman Bharat"], priority_interventions: ["Healthcare facility", "Skill development"] },
-    { id: 3, name: "Kendumundi", state: "Odisha", district: "Mayurbhanj", block: "Jashipur", tribal_population: 1234, total_population: 1567, ifr_pattas: 78, cfr_pattas: 3, schemes_eligible: ["PM-KISAN", "MGNREGA", "PM Ujjwala"], priority_interventions: ["Forest protection", "Livelihood enhancement"] },
-    { id: 4, name: "Kondapuram", state: "Telangana", district: "Adilabad", block: "Utnoor", tribal_population: 789, total_population: 1045, ifr_pattas: 56, cfr_pattas: 2, schemes_eligible: ["PM-KISAN", "Jal Jeevan Mission", "Digital India"], priority_interventions: ["Digital connectivity", "Agricultural extension"] },
-];
+import { villageData } from "@/lib/village-data";
 
 const dajguaSchemes = [
     { name: "PM-KISAN", description: "Direct income support to farmers" },
@@ -21,6 +14,8 @@ const dajguaSchemes = [
     { name: "Ayushman Bharat", description: "Health insurance coverage" },
     { name: "PM Ujjwala", description: "LPG connections to women from BPL households" },
     { name: "Digital India", description: "Improving online infrastructure and internet connectivity" },
+    { name: "National Food Security Act", description: "Ensuring food security for all" },
+    { name: "Pradhan Mantri Jan Dhan Yojana", description: "Financial inclusion program" }
 ];
 
 export default function DSSPage() {
@@ -28,15 +23,15 @@ export default function DSSPage() {
     const [selectedVillage, setSelectedVillage] = useState("");
     const [recommendations, setRecommendations] = useState<Village | null>(null);
 
-    const states = useMemo(() => Array.from(new Set(villages.map(v => v.state))), []);
+    const states = useMemo(() => Array.from(new Set(villageData.map(v => v.state))), []);
     const availableVillages = useMemo(() => {
         if (!selectedState) return [];
-        return villages.filter(v => v.state === selectedState);
+        return villageData.filter(v => v.state === selectedState);
     }, [selectedState]);
 
     const handleShowRecommendations = () => {
-        const village = villages.find(v => v.id === parseInt(selectedVillage));
-        setRecommendations(village);
+        const village = villageData.find(v => v.id === parseInt(selectedVillage));
+        setRecommendations(village || null);
     };
 
 	return (
@@ -93,6 +88,7 @@ export default function DSSPage() {
                                             <p><strong>Tribal Population:</strong> {recommendations.tribal_population}</p>
                                             <p><strong>IFR Pattas:</strong> {recommendations.ifr_pattas}</p>
                                             <p><strong>CFR Pattas:</strong> {recommendations.cfr_pattas}</p>
+                                            <p><strong>CFRR Pattas:</strong> {recommendations.cfrr_pattas}</p>
                                         </div>
                                     </div>
                                     <div>

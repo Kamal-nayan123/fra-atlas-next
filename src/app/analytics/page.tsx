@@ -1,20 +1,15 @@
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, PointElement, LineElement, Tooltip, Legend } from 'chart.js';
 import { Bar, Line } from 'react-chartjs-2';
-import { ArrowUp, Minus, ArrowDown } from 'lucide-react';
 import { useTheme } from '@/components/ui/theme-provider';
+import { useMemo } from "react";
+import { villageData } from "@/lib/village-data";
+import { Landmark } from "lucide-react";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, PointElement, LineElement, Tooltip, Legend);
 
-const kpiData = [
-    { indicator: "FRA Title Distribution Rate", target: 75, current: 49.02, trend: "improving" },
-    { indicator: "Document Digitization Progress", target: 100, current: 23.4, trend: "steady" },
-    { indicator: "Scheme Convergence Rate", target: 85, current: 34.7, trend: "improving" },
-    { indicator: "Village Atlas Coverage", target: 100, current: 63.2, trend: "rapid" },
-];
-
+// Note: Timeline data is static as it represents historical trends.
 const timelineData = {
     labels: ['2020', '2021', '2022', '2023', '2024'],
     datasets: [{
@@ -27,23 +22,37 @@ const timelineData = {
     }]
 };
 
-const coverageData = {
-    labels: ['Madhya Pradesh', 'Odisha', 'Telangana', 'Tripura'],
-    datasets: [{
-        label: 'Village Coverage %',
-        data: [45.2, 78.9, 56.7, 89.3],
-        backgroundColor: ['#1FB8CD', '#FFC185', '#B4413C', '#ECEBD5']
-    }]
-};
-
-const TrendIcon = ({ trend }: { trend: string }) => {
-    if (trend === 'improving' || trend === 'rapid') return <ArrowUp className="h-4 w-4 text-green-500" />;
-    if (trend === 'steady') return <Minus className="h-4 w-4 text-gray-500" />;
-    return <ArrowDown className="h-4 w-4 text-red-500" />;
-};
-
 export default function AnalyticsPage() {
     const { theme } = useTheme();
+
+    const analytics = useMemo(() => {
+        const totalVillages = villageData.length;
+        const ifrVillages = villageData.filter(v => v.type === 'ifr').length;
+        const cfrVillages = villageData.filter(v => v.type === 'cfr').length;
+        const cfrrVillages = villageData.filter(v => v.type === 'cfrr').length;
+
+        const coverageByState = villageData.reduce((acc, v) => {
+            acc[v.state] = (acc[v.state] || 0) + 1;
+            return acc;
+        }, {} as Record<string, number>);
+
+        return {
+            kpiData: [
+                { indicator: "Total Villages Tracked", value: totalVillages, unit: "" },
+                { indicator: "IFR Villages", value: ((ifrVillages / totalVillages) * 100).toFixed(2), unit: "%" },
+                { indicator: "CFR Villages", value: ((cfrVillages / totalVillages) * 100).toFixed(2), unit: "%" },
+                { indicator: "CFRR Villages", value: ((cfrrVillages / totalVillages) * 100).toFixed(2), unit: "%" },
+            ],
+            coverageData: {
+                labels: Object.keys(coverageByState),
+                datasets: [{
+                    label: 'Number of Villages',
+                    data: Object.values(coverageByState),
+                    backgroundColor: ['#1FB8CD', '#FFC185', '#B4413C', '#ECEBD5', '#ABCDEF', '#FEDCBA']
+                }]
+            }
+        };
+    }, []);
 
     const chartOptions = {
         responsive: true,
@@ -74,15 +83,11 @@ export default function AnalyticsPage() {
                 </CardHeader>
                 <CardContent>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {kpiData.map((kpi, idx) => (
-                            <div key={idx} className="p-4 rounded-lg border bg-card text-card-foreground shadow-sm text-center">
+                        {analytics.kpiData.map((kpi, idx) => (
+                            <div key={idx} className="p-4 rounded-lg border bg-card text-card-foreground shadow-sm text-center flex flex-col items-center justify-center">
+                                <Landmark className="h-6 w-6 text-muted-foreground mb-2" />
                                 <p className="text-sm text-muted-foreground">{kpi.indicator}</p>
-                                <p className="text-3xl font-bold my-2">{kpi.current}%</p>
-                                <p className="text-xs text-muted-foreground">Target: {kpi.target}%</p>
-                                <div className="flex items-center justify-center gap-1 mt-1">
-                                    <TrendIcon trend={kpi.trend} />
-                                    <span className="text-xs capitalize">{kpi.trend}</span>
-                                </div>
+                                <p className="text-3xl font-bold my-1">{kpi.value}{kpi.unit}</p>
                             </div>
                         ))}
                     </div>
@@ -102,11 +107,11 @@ export default function AnalyticsPage() {
                 </Card>
 				<Card>
                     <CardHeader>
-                        <CardTitle>Village Coverage by State</CardTitle>
+                        <CardTitle>Village Distribution by State</CardTitle>
                     </CardHeader>
 					<CardContent>
 						<div style={{height: 300}}>
-							<Bar data={coverageData} options={chartOptions} />
+							<Bar data={analytics.coverageData} options={chartOptions} />
 						</div>
 					</CardContent>
 				</Card>
