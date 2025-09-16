@@ -1,7 +1,9 @@
-import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = [
+import { Village } from '@/lib/types';
+
+export const villageData: Village[] = [
     {
         "id": 1,
-        "name": "Village 1",
+        "name": "Balpet",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 2",
@@ -25,7 +27,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 2,
-        "name": "Village 2",
+        "name": "Basaniya",
         "state": "Madhya Pradesh",
         "district": "Dindori",
         "block": "Dindori Block 3",
@@ -51,7 +53,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 3,
-        "name": "Village 3",
+        "name": "Asri",
         "state": "Jharkhand",
         "district": "Ranchi",
         "block": "Ranchi Block 3",
@@ -78,7 +80,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 4,
-        "name": "Village 4",
+        "name": "Barkhoh",
         "state": "Madhya Pradesh",
         "district": "Dindori",
         "block": "Dindori Block 2",
@@ -104,7 +106,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 5,
-        "name": "Village 5",
+        "name": "Alawahi",
         "state": "Chhattisgarh",
         "district": "Bastar",
         "block": "Bastar Block 1",
@@ -130,7 +132,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 6,
-        "name": "Village 6",
+        "name": "Aurai",
         "state": "Madhya Pradesh",
         "district": "Dindori",
         "block": "Dindori Block 1",
@@ -157,7 +159,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 7,
-        "name": "Village 7",
+        "name": "Aawrnabhata",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 5",
@@ -183,7 +185,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 8,
-        "name": "Village 8",
+        "name": "Bagma",
         "state": "Tripura",
         "district": "Dhalai",
         "block": "Dhalai Block 4",
@@ -209,7 +211,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 9,
-        "name": "Village 9",
+        "name": "Alamgarh",
         "state": "Madhya Pradesh",
         "district": "Betul",
         "block": "Betul Block 4",
@@ -236,7 +238,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 10,
-        "name": "Village 10",
+        "name": "Beratulunda",
         "state": "Jharkhand",
         "district": "West Singhbhum",
         "block": "West Singhbhum Block 4",
@@ -263,7 +265,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 11,
-        "name": "Village 11",
+        "name": "Gundala",
         "state": "Telangana",
         "district": "Bhadradri Kothagudem",
         "block": "Bhadradri Kothagudem Block 5",
@@ -287,7 +289,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 12,
-        "name": "Village 12",
+        "name": "Chitalanka",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 4",
@@ -313,7 +315,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 13,
-        "name": "Village 13",
+        "name": "Babaiha",
         "state": "Madhya Pradesh",
         "district": "Mandla",
         "block": "Mandla Block 3",
@@ -337,7 +339,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 14,
-        "name": "Village 14",
+        "name": "Belluri",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 4",
@@ -363,7 +365,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 15,
-        "name": "Village 15",
+        "name": "Barakhatanga",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 2",
@@ -386,7 +388,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 16,
-        "name": "Village 16",
+        "name": "Bangapal",
         "state": "Chhattisgarh",
         "district": "Bastar",
         "block": "Bastar Block 4",
@@ -414,7 +416,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 17,
-        "name": "Village 17",
+        "name": "Bankimnagar",
         "state": "Tripura",
         "district": "West Tripura",
         "block": "West Tripura Block 2",
@@ -439,7 +441,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 18,
-        "name": "Village 18",
+        "name": "Agartoli",
         "state": "Jharkhand",
         "district": "Ranchi",
         "block": "Ranchi Block 4",
@@ -465,7 +467,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 19,
-        "name": "Village 19",
+        "name": "Ankoli",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 3",
@@ -491,7 +493,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 20,
-        "name": "Village 20",
+        "name": "Alekhpur",
         "state": "Odisha",
         "district": "Sundargarh",
         "block": "Sundargarh Block 4",
@@ -519,7 +521,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 21,
-        "name": "Village 21",
+        "name": "Bada Damali",
         "state": "Chhattisgarh",
         "district": "Surguja",
         "block": "Surguja Block 5",
@@ -545,7 +547,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 22,
-        "name": "Village 22",
+        "name": "Batondha",
         "state": "Madhya Pradesh",
         "district": "Dindori",
         "block": "Dindori Block 3",
@@ -569,7 +571,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 23,
-        "name": "Village 23",
+        "name": "Champaknagar",
         "state": "Tripura",
         "district": "West Tripura",
         "block": "West Tripura Block 2",
@@ -595,7 +597,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 24,
-        "name": "Village 24",
+        "name": "Haludia",
         "state": "Tripura",
         "district": "Khowai",
         "block": "Khowai Block 4",
@@ -621,7 +623,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 25,
-        "name": "Village 25",
+        "name": "Badri",
         "state": "Jharkhand",
         "district": "Ranchi",
         "block": "Ranchi Block 3",
@@ -649,7 +651,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 26,
-        "name": "Village 26",
+        "name": "Badani Jharia",
         "state": "Chhattisgarh",
         "district": "Surguja",
         "block": "Surguja Block 5",
@@ -673,7 +675,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 27,
-        "name": "Village 27",
+        "name": "Batma",
         "state": "Jharkhand",
         "district": "West Singhbhum",
         "block": "West Singhbhum Block 2",
@@ -699,7 +701,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 28,
-        "name": "Village 28",
+        "name": "Bagiribeda",
         "state": "Odisha",
         "district": "Koraput",
         "block": "Koraput Block 3",
@@ -723,7 +725,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 29,
-        "name": "Village 29",
+        "name": "Anathogu",
         "state": "Telangana",
         "district": "Bhadradri Kothagudem",
         "block": "Bhadradri Kothagudem Block 3",
@@ -748,7 +750,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 30,
-        "name": "Village 30",
+        "name": "Arjunjhari",
         "state": "Odisha",
         "district": "Sundargarh",
         "block": "Sundargarh Block 1",
@@ -773,7 +775,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 31,
-        "name": "Village 31",
+        "name": "Adchi",
         "state": "Chhattisgarh",
         "district": "Surguja",
         "block": "Surguja Block 5",
@@ -799,7 +801,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 32,
-        "name": "Village 32",
+        "name": "Badikhairi",
         "state": "Madhya Pradesh",
         "district": "Mandla",
         "block": "Mandla Block 5",
@@ -825,7 +827,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 33,
-        "name": "Village 33",
+        "name": "Balenga",
         "state": "Chhattisgarh",
         "district": "Bastar",
         "block": "Bastar Block 1",
@@ -853,7 +855,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 34,
-        "name": "Village 34",
+        "name": "Namanjoybari",
         "state": "Tripura",
         "district": "Khowai",
         "block": "Khowai Block 1",
@@ -876,7 +878,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 35,
-        "name": "Village 35",
+        "name": "Benadag",
         "state": "Jharkhand",
         "district": "Ranchi",
         "block": "Ranchi Block 3",
@@ -899,7 +901,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 36,
-        "name": "Village 36",
+        "name": "Barwara",
         "state": "Madhya Pradesh",
         "district": "Dindori",
         "block": "Dindori Block 3",
@@ -922,7 +924,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 37,
-        "name": "Village 37",
+        "name": "Achli",
         "state": "Madhya Pradesh",
         "district": "Mandla",
         "block": "Mandla Block 5",
@@ -946,7 +948,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 38,
-        "name": "Village 38",
+        "name": "Bada-turamara",
         "state": "Odisha",
         "district": "Sundargarh",
         "block": "Sundargarh Block 5",
@@ -973,7 +975,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 39,
-        "name": "Village 39",
+        "name": "Bargaon",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 3",
@@ -999,7 +1001,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 40,
-        "name": "Village 40",
+        "name": "Badabhundu",
         "state": "Odisha",
         "district": "Mayurbhanj",
         "block": "Mayurbhanj Block 1",
@@ -1026,7 +1028,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 41,
-        "name": "Village 41",
+        "name": "Asni",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 1",
@@ -1050,7 +1052,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 42,
-        "name": "Village 42",
+        "name": "Bamhni",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 4",
@@ -1075,7 +1077,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 43,
-        "name": "Village 43",
+        "name": "Banpur",
         "state": "Jharkhand",
         "district": "Ranchi",
         "block": "Ranchi Block 4",
@@ -1101,7 +1103,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 44,
-        "name": "Village 44",
+        "name": "Asola",
         "state": "Chhattisgarh",
         "district": "Surguja",
         "block": "Surguja Block 2",
@@ -1129,7 +1131,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 45,
-        "name": "Village 45",
+        "name": "Banuaguda",
         "state": "Odisha",
         "district": "Koraput",
         "block": "Koraput Block 2",
@@ -1154,7 +1156,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 46,
-        "name": "Village 46",
+        "name": "Berakasai",
         "state": "Jharkhand",
         "district": "West Singhbhum",
         "block": "West Singhbhum Block 3",
@@ -1180,7 +1182,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 47,
-        "name": "Village 47",
+        "name": "Allapalli",
         "state": "Telangana",
         "district": "Bhadradri Kothagudem",
         "block": "Bhadradri Kothagudem Block 3",
@@ -1203,7 +1205,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 48,
-        "name": "Village 48",
+        "name": "Ambikapur",
         "state": "Chhattisgarh",
         "district": "Surguja",
         "block": "Surguja Block 4",
@@ -1228,7 +1230,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 49,
-        "name": "Village 49",
+        "name": "Dalapatipara",
         "state": "Tripura",
         "district": "Dhalai",
         "block": "Dhalai Block 2",
@@ -1254,7 +1256,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 50,
-        "name": "Village 50",
+        "name": "Barkigorang",
         "state": "Jharkhand",
         "district": "Ranchi",
         "block": "Ranchi Block 4",
@@ -1281,7 +1283,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 51,
-        "name": "Village 51",
+        "name": "Janmejoynagar",
         "state": "Tripura",
         "district": "West Tripura",
         "block": "West Tripura Block 3",
@@ -1308,7 +1310,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 52,
-        "name": "Village 52",
+        "name": "Chhotegodre",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 3",
@@ -1331,7 +1333,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 53,
-        "name": "Village 53",
+        "name": "Badeamawal",
         "state": "Chhattisgarh",
         "district": "Bastar",
         "block": "Bastar Block 4",
@@ -1354,7 +1356,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 54,
-        "name": "Village 54",
+        "name": "North Gokulnagar",
         "state": "Tripura",
         "district": "Khowai",
         "block": "Khowai Block 5",
@@ -1378,7 +1380,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 55,
-        "name": "Village 55",
+        "name": "Battisawargaon",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 5",
@@ -1404,7 +1406,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 56,
-        "name": "Village 56",
+        "name": "Armai",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 1",
@@ -1428,7 +1430,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 57,
-        "name": "Village 57",
+        "name": "Chandenar",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 5",
@@ -1454,7 +1456,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 58,
-        "name": "Village 58",
+        "name": "Badam",
         "state": "Odisha",
         "district": "Mayurbhanj",
         "block": "Mayurbhanj Block 1",
@@ -1478,7 +1480,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 59,
-        "name": "Village 59",
+        "name": "Amgawan",
         "state": "Madhya Pradesh",
         "district": "Mandla",
         "block": "Mandla Block 2",
@@ -1503,7 +1505,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 60,
-        "name": "Village 60",
+        "name": "Bangru",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 2",
@@ -1528,7 +1530,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 61,
-        "name": "Village 61",
+        "name": "Adaviramaveram",
         "state": "Telangana",
         "district": "Bhadradri Kothagudem",
         "block": "Bhadradri Kothagudem Block 1",
@@ -1555,7 +1557,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 62,
-        "name": "Village 62",
+        "name": "Bandunasa",
         "state": "Jharkhand",
         "district": "West Singhbhum",
         "block": "West Singhbhum Block 5",
@@ -1582,7 +1584,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 63,
-        "name": "Village 63",
+        "name": "Akhdar",
         "state": "Madhya Pradesh",
         "district": "Dindori",
         "block": "Dindori Block 2",
@@ -1608,7 +1610,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 64,
-        "name": "Village 64",
+        "name": "Bodaikunta",
         "state": "Telangana",
         "district": "Bhadradri Kothagudem",
         "block": "Bhadradri Kothagudem Block 1",
@@ -1634,7 +1636,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 65,
-        "name": "Village 65",
+        "name": "Balood",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 2",
@@ -1662,7 +1664,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 66,
-        "name": "Village 66",
+        "name": "Bakchhera Gondi",
         "state": "Madhya Pradesh",
         "district": "Mandla",
         "block": "Mandla Block 3",
@@ -1686,7 +1688,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 67,
-        "name": "Village 67",
+        "name": "Anantharam",
         "state": "Telangana",
         "district": "Bhadradri Kothagudem",
         "block": "Bhadradri Kothagudem Block 1",
@@ -1713,7 +1715,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 68,
-        "name": "Village 68",
+        "name": "Bankir",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 5",
@@ -1739,7 +1741,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 69,
-        "name": "Village 69",
+        "name": "Amanala",
         "state": "Madhya Pradesh",
         "district": "Mandla",
         "block": "Mandla Block 3",
@@ -1763,7 +1765,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 70,
-        "name": "Village 70",
+        "name": "Basuput",
         "state": "Odisha",
         "district": "Koraput",
         "block": "Koraput Block 1",
@@ -1790,7 +1792,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 71,
-        "name": "Village 71",
+        "name": "Baraguda",
         "state": "Odisha",
         "district": "Koraput",
         "block": "Koraput Block 3",
@@ -1813,7 +1815,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 72,
-        "name": "Village 72",
+        "name": "Pusugudem",
         "state": "Telangana",
         "district": "Bhadradri Kothagudem",
         "block": "Bhadradri Kothagudem Block 2",
@@ -1837,7 +1839,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 73,
-        "name": "Village 73",
+        "name": "Bahar Chura",
         "state": "Chhattisgarh",
         "district": "Surguja",
         "block": "Surguja Block 3",
@@ -1863,7 +1865,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 74,
-        "name": "Village 74",
+        "name": "Amla",
         "state": "Madhya Pradesh",
         "district": "Betul",
         "block": "Betul Block 1",
@@ -1889,7 +1891,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 75,
-        "name": "Village 75",
+        "name": "Bakchheradona",
         "state": "Madhya Pradesh",
         "district": "Mandla",
         "block": "Mandla Block 1",
@@ -1915,7 +1917,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 76,
-        "name": "Village 76",
+        "name": "Laxmipur",
         "state": "Tripura",
         "district": "West Tripura",
         "block": "West Tripura Block 2",
@@ -1942,7 +1944,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 77,
-        "name": "Village 77",
+        "name": "Raishyabari",
         "state": "Tripura",
         "district": "Dhalai",
         "block": "Dhalai Block 1",
@@ -1968,7 +1970,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 78,
-        "name": "Village 78",
+        "name": "Bhairamband",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 3",
@@ -1994,7 +1996,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 79,
-        "name": "Village 79",
+        "name": "Bandi",
         "state": "Jharkhand",
         "district": "West Singhbhum",
         "block": "West Singhbhum Block 2",
@@ -2021,7 +2023,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 80,
-        "name": "Village 80",
+        "name": "Salema",
         "state": "Tripura",
         "district": "Dhalai",
         "block": "Dhalai Block 2",
@@ -2047,7 +2049,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 81,
-        "name": "Village 81",
+        "name": "Bheemseri",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 5",
@@ -2073,7 +2075,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 82,
-        "name": "Village 82",
+        "name": "Amphali",
         "state": "Odisha",
         "district": "Sundargarh",
         "block": "Sundargarh Block 4",
@@ -2099,7 +2101,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 83,
-        "name": "Village 83",
+        "name": "Barwadag",
         "state": "Jharkhand",
         "district": "Ranchi",
         "block": "Ranchi Block 1",
@@ -2126,7 +2128,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 84,
-        "name": "Village 84",
+        "name": "Arli",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 5",
@@ -2151,7 +2153,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 85,
-        "name": "Village 85",
+        "name": "Vankidi",
         "state": "Telangana",
         "district": "Komaram Bheem",
         "block": "Komaram Bheem Block 2",
@@ -2177,7 +2179,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 86,
-        "name": "Village 86",
+        "name": "Baja",
         "state": "Madhya Pradesh",
         "district": "Mandla",
         "block": "Mandla Block 1",
@@ -2204,7 +2206,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 87,
-        "name": "Village 87",
+        "name": "Nonacherra",
         "state": "Tripura",
         "district": "Khowai",
         "block": "Khowai Block 5",
@@ -2229,7 +2231,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 88,
-        "name": "Village 88",
+        "name": "Dasnapur",
         "state": "Telangana",
         "district": "Komaram Bheem",
         "block": "Komaram Bheem Block 2",
@@ -2255,7 +2257,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 89,
-        "name": "Village 89",
+        "name": "East Laxmipur",
         "state": "Tripura",
         "district": "Khowai",
         "block": "Khowai Block 1",
@@ -2281,7 +2283,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 90,
-        "name": "Village 90",
+        "name": "Majlishpur",
         "state": "Tripura",
         "district": "West Tripura",
         "block": "West Tripura Block 1",
@@ -2306,7 +2308,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 91,
-        "name": "Village 91",
+        "name": "Bagdega",
         "state": "Odisha",
         "district": "Mayurbhanj",
         "block": "Mayurbhanj Block 5",
@@ -2332,7 +2334,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 92,
-        "name": "Village 92",
+        "name": "Basanpur",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 5",
@@ -2356,7 +2358,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 93,
-        "name": "Village 93",
+        "name": "Angarapada",
         "state": "Odisha",
         "district": "Mayurbhanj",
         "block": "Mayurbhanj Block 5",
@@ -2381,7 +2383,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 94,
-        "name": "Village 94",
+        "name": "Bakadaguda",
         "state": "Odisha",
         "district": "Koraput",
         "block": "Koraput Block 3",
@@ -2406,7 +2408,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 95,
-        "name": "Village 95",
+        "name": "Badhar",
         "state": "Madhya Pradesh",
         "district": "Mandla",
         "block": "Mandla Block 5",
@@ -2431,7 +2433,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 96,
-        "name": "Village 96",
+        "name": "Bakshidih",
         "state": "Jharkhand",
         "district": "Ranchi",
         "block": "Ranchi Block 5",
@@ -2455,7 +2457,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 97,
-        "name": "Village 97",
+        "name": "Badegodre",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 5",
@@ -2480,7 +2482,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 98,
-        "name": "Village 98",
+        "name": "Baghmohalai",
         "state": "Chhattisgarh",
         "district": "Bastar",
         "block": "Bastar Block 3",
@@ -2507,7 +2509,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 99,
-        "name": "Village 99",
+        "name": "Anjan",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 2",
@@ -2532,7 +2534,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 100,
-        "name": "Village 100",
+        "name": "Ambassa",
         "state": "Tripura",
         "district": "Dhalai",
         "block": "Dhalai Block 4",
@@ -2558,7 +2560,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 101,
-        "name": "Village 101",
+        "name": "Asodabhurki",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 3",
@@ -2583,7 +2585,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 102,
-        "name": "Village 102",
+        "name": "Atharamura",
         "state": "Tripura",
         "district": "Khowai",
         "block": "Khowai Block 3",
@@ -2610,7 +2612,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 103,
-        "name": "Village 103",
+        "name": "Bhogam",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 3",
@@ -2635,7 +2637,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 104,
-        "name": "Village 104",
+        "name": "Borenur",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 5",
@@ -2659,7 +2661,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 105,
-        "name": "Village 105",
+        "name": "Bagra",
         "state": "Chhattisgarh",
         "district": "Surguja",
         "block": "Surguja Block 3",
@@ -2682,7 +2684,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 106,
-        "name": "Village 106",
+        "name": "Maracherra",
         "state": "Tripura",
         "district": "Dhalai",
         "block": "Dhalai Block 5",
@@ -2708,7 +2710,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 107,
-        "name": "Village 107",
+        "name": "Bakel",
         "state": "Chhattisgarh",
         "district": "Bastar",
         "block": "Bastar Block 2",
@@ -2733,7 +2735,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 108,
-        "name": "Village 108",
+        "name": "Bariguda",
         "state": "Odisha",
         "district": "Koraput",
         "block": "Koraput Block 1",
@@ -2759,7 +2761,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 109,
-        "name": "Village 109",
+        "name": "Khapri",
         "state": "Telangana",
         "district": "Komaram Bheem",
         "block": "Komaram Bheem Block 4",
@@ -2783,7 +2785,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 110,
-        "name": "Village 110",
+        "name": "Angara",
         "state": "Jharkhand",
         "district": "Ranchi",
         "block": "Ranchi Block 4",
@@ -2809,7 +2811,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 111,
-        "name": "Village 111",
+        "name": "Karakagudem",
         "state": "Telangana",
         "district": "Bhadradri Kothagudem",
         "block": "Bhadradri Kothagudem Block 2",
@@ -2835,7 +2837,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 112,
-        "name": "Village 112",
+        "name": "Belbari",
         "state": "Tripura",
         "district": "West Tripura",
         "block": "West Tripura Block 1",
@@ -2859,7 +2861,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 113,
-        "name": "Village 113",
+        "name": "Bhogam",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 5",
@@ -2886,7 +2888,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 114,
-        "name": "Village 114",
+        "name": "Kowdianmovad",
         "state": "Telangana",
         "district": "Komaram Bheem",
         "block": "Komaram Bheem Block 2",
@@ -2912,7 +2914,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 115,
-        "name": "Village 115",
+        "name": "Badjaidhanposi",
         "state": "Odisha",
         "district": "Mayurbhanj",
         "block": "Mayurbhanj Block 4",
@@ -2937,7 +2939,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 116,
-        "name": "Village 116",
+        "name": "Chawmanu",
         "state": "Tripura",
         "district": "Dhalai",
         "block": "Dhalai Block 3",
@@ -2961,7 +2963,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 117,
-        "name": "Village 117",
+        "name": "Badamput",
         "state": "Odisha",
         "district": "Koraput",
         "block": "Koraput Block 4",
@@ -2985,7 +2987,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 118,
-        "name": "Village 118",
+        "name": "Badgaon",
         "state": "Odisha",
         "district": "Sundargarh",
         "block": "Sundargarh Block 1",
@@ -3012,7 +3014,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 119,
-        "name": "Village 119",
+        "name": "Amboa",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 3",
@@ -3037,7 +3039,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 120,
-        "name": "Village 120",
+        "name": "Atariya",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 1",
@@ -3061,7 +3063,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 121,
-        "name": "Village 121",
+        "name": "Balipetaguda",
         "state": "Odisha",
         "district": "Koraput",
         "block": "Koraput Block 2",
@@ -3087,7 +3089,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 122,
-        "name": "Village 122",
+        "name": "Badechakwa",
         "state": "Chhattisgarh",
         "district": "Bastar",
         "block": "Bastar Block 2",
@@ -3111,7 +3113,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 123,
-        "name": "Village 123",
+        "name": "Badealnar",
         "state": "Chhattisgarh",
         "district": "Bastar",
         "block": "Bastar Block 1",
@@ -3134,7 +3136,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 124,
-        "name": "Village 124",
+        "name": "Bera Ichinda",
         "state": "Jharkhand",
         "district": "West Singhbhum",
         "block": "West Singhbhum Block 5",
@@ -3162,7 +3164,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 125,
-        "name": "Village 125",
+        "name": "Asurghaty",
         "state": "Odisha",
         "district": "Mayurbhanj",
         "block": "Mayurbhanj Block 4",
@@ -3187,7 +3189,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 126,
-        "name": "Village 126",
+        "name": "Chanda",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 4",
@@ -3212,7 +3214,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 127,
-        "name": "Village 127",
+        "name": "Bargai",
         "state": "Madhya Pradesh",
         "district": "Dindori",
         "block": "Dindori Block 2",
@@ -3238,7 +3240,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 128,
-        "name": "Village 128",
+        "name": "Manu",
         "state": "Tripura",
         "district": "Dhalai",
         "block": "Dhalai Block 3",
@@ -3265,7 +3267,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 129,
-        "name": "Village 129",
+        "name": "Bagaraguda",
         "state": "Odisha",
         "district": "Koraput",
         "block": "Koraput Block 2",
@@ -3292,7 +3294,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 130,
-        "name": "Village 130",
+        "name": "Regalla",
         "state": "Telangana",
         "district": "Bhadradri Kothagudem",
         "block": "Bhadradri Kothagudem Block 1",
@@ -3318,7 +3320,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 131,
-        "name": "Village 131",
+        "name": "Maharanipur",
         "state": "Tripura",
         "district": "Khowai",
         "block": "Khowai Block 1",
@@ -3343,7 +3345,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 132,
-        "name": "Village 132",
+        "name": "Balahanpur",
         "state": "Telangana",
         "district": "Komaram Bheem",
         "block": "Komaram Bheem Block 4",
@@ -3368,7 +3370,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 133,
-        "name": "Village 133",
+        "name": "Dumburnagar",
         "state": "Tripura",
         "district": "Dhalai",
         "block": "Dhalai Block 3",
@@ -3393,7 +3395,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 134,
-        "name": "Village 134",
+        "name": "Chandenar",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 4",
@@ -3419,7 +3421,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 135,
-        "name": "Village 135",
+        "name": "Asni",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 3",
@@ -3445,7 +3447,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 136,
-        "name": "Village 136",
+        "name": "Ajhwar",
         "state": "Madhya Pradesh",
         "district": "Dindori",
         "block": "Dindori Block 4",
@@ -3469,7 +3471,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 137,
-        "name": "Village 137",
+        "name": "Armai",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 5",
@@ -3495,7 +3497,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 138,
-        "name": "Village 138",
+        "name": "Amboa",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 3",
@@ -3523,7 +3525,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 139,
-        "name": "Village 139",
+        "name": "Kerameri",
         "state": "Telangana",
         "district": "Komaram Bheem",
         "block": "Komaram Bheem Block 2",
@@ -3547,7 +3549,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 140,
-        "name": "Village 140",
+        "name": "Bagra",
         "state": "Odisha",
         "district": "Koraput",
         "block": "Koraput Block 2",
@@ -3573,7 +3575,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 141,
-        "name": "Village 141",
+        "name": "Ganganagar",
         "state": "Tripura",
         "district": "Dhalai",
         "block": "Dhalai Block 2",
@@ -3600,7 +3602,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 142,
-        "name": "Village 142",
+        "name": "Badhatnabeda",
         "state": "Odisha",
         "district": "Mayurbhanj",
         "block": "Mayurbhanj Block 5",
@@ -3624,7 +3626,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 143,
-        "name": "Village 143",
+        "name": "Atariya",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 2",
@@ -3647,7 +3649,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 144,
-        "name": "Village 144",
+        "name": "Bargaon",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 1",
@@ -3672,7 +3674,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 145,
-        "name": "Village 145",
+        "name": "Baheya",
         "state": "Jharkhand",
         "district": "Ranchi",
         "block": "Ranchi Block 5",
@@ -3700,7 +3702,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 146,
-        "name": "Village 146",
+        "name": "Ankapoor",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 2",
@@ -3727,7 +3729,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 147,
-        "name": "Village 147",
+        "name": "Baghad",
         "state": "Madhya Pradesh",
         "district": "Dindori",
         "block": "Dindori Block 4",
@@ -3751,7 +3753,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 148,
-        "name": "Village 148",
+        "name": "South Gakulnagar",
         "state": "Tripura",
         "district": "Khowai",
         "block": "Khowai Block 2",
@@ -3779,7 +3781,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 149,
-        "name": "Village 149",
+        "name": "Chitalanka",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 2",
@@ -3803,7 +3805,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 150,
-        "name": "Village 150",
+        "name": "Amdar",
         "state": "Madhya Pradesh",
         "district": "Betul",
         "block": "Betul Block 4",
@@ -3828,7 +3830,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 151,
-        "name": "Village 151",
+        "name": "Bankanda",
         "state": "Odisha",
         "district": "Mayurbhanj",
         "block": "Mayurbhanj Block 1",
@@ -3852,7 +3854,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 152,
-        "name": "Village 152",
+        "name": "Badki Mahari",
         "state": "Chhattisgarh",
         "district": "Surguja",
         "block": "Surguja Block 1",
@@ -3876,7 +3878,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 153,
-        "name": "Village 153",
+        "name": "Amadarha",
         "state": "Chhattisgarh",
         "district": "Surguja",
         "block": "Surguja Block 3",
@@ -3903,7 +3905,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 154,
-        "name": "Village 154",
+        "name": "Chunchupally",
         "state": "Telangana",
         "district": "Bhadradri Kothagudem",
         "block": "Bhadradri Kothagudem Block 2",
@@ -3928,7 +3930,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 155,
-        "name": "Village 155",
+        "name": "Pusugudem",
         "state": "Telangana",
         "district": "Bhadradri Kothagudem",
         "block": "Bhadradri Kothagudem Block 5",
@@ -3951,7 +3953,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 156,
-        "name": "Village 156",
+        "name": "Barchha",
         "state": "Madhya Pradesh",
         "district": "Dindori",
         "block": "Dindori Block 4",
@@ -3975,7 +3977,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 157,
-        "name": "Village 157",
+        "name": "Ramkrishnapur",
         "state": "Tripura",
         "district": "Khowai",
         "block": "Khowai Block 4",
@@ -4001,7 +4003,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 158,
-        "name": "Village 158",
+        "name": "Banapokharia",
         "state": "Odisha",
         "district": "Mayurbhanj",
         "block": "Mayurbhanj Block 1",
@@ -4027,7 +4029,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 159,
-        "name": "Village 159",
+        "name": "Alampur",
         "state": "Madhya Pradesh",
         "district": "Betul",
         "block": "Betul Block 2",
@@ -4051,7 +4053,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 160,
-        "name": "Village 160",
+        "name": "Ajirma",
         "state": "Chhattisgarh",
         "district": "Surguja",
         "block": "Surguja Block 1",
@@ -4074,7 +4076,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 161,
-        "name": "Village 161",
+        "name": "Bagma",
         "state": "Tripura",
         "district": "Dhalai",
         "block": "Dhalai Block 1",
@@ -4101,7 +4103,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 162,
-        "name": "Village 162",
+        "name": "Bhairamband",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 1",
@@ -4125,7 +4127,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 163,
-        "name": "Village 163",
+        "name": "Anukunta",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 3",
@@ -4152,7 +4154,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 164,
-        "name": "Village 164",
+        "name": "Agartoli",
         "state": "Jharkhand",
         "district": "Ranchi",
         "block": "Ranchi Block 5",
@@ -4176,7 +4178,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 165,
-        "name": "Village 165",
+        "name": "Badbhaludunguri",
         "state": "Odisha",
         "district": "Sundargarh",
         "block": "Sundargarh Block 4",
@@ -4203,7 +4205,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 166,
-        "name": "Village 166",
+        "name": "Arli",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 3",
@@ -4227,7 +4229,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 167,
-        "name": "Village 167",
+        "name": "Anantharam",
         "state": "Telangana",
         "district": "Bhadradri Kothagudem",
         "block": "Bhadradri Kothagudem Block 3",
@@ -4253,7 +4255,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 168,
-        "name": "Village 168",
+        "name": "Joynagar",
         "state": "Tripura",
         "district": "West Tripura",
         "block": "West Tripura Block 2",
@@ -4278,7 +4280,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 169,
-        "name": "Village 169",
+        "name": "Kakracherra",
         "state": "Tripura",
         "district": "Khowai",
         "block": "Khowai Block 2",
@@ -4303,7 +4305,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 170,
-        "name": "Village 170",
+        "name": "Battisawargaon",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 2",
@@ -4328,7 +4330,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 171,
-        "name": "Village 171",
+        "name": "Arjunwadi",
         "state": "Madhya Pradesh",
         "district": "Betul",
         "block": "Betul Block 4",
@@ -4356,7 +4358,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 172,
-        "name": "Village 172",
+        "name": "Chhotegodre",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 5",
@@ -4381,7 +4383,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 173,
-        "name": "Village 173",
+        "name": "Jirania",
         "state": "Tripura",
         "district": "West Tripura",
         "block": "West Tripura Block 5",
@@ -4407,7 +4409,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 174,
-        "name": "Village 174",
+        "name": "Bagmohlai",
         "state": "Chhattisgarh",
         "district": "Bastar",
         "block": "Bastar Block 1",
@@ -4431,7 +4433,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 175,
-        "name": "Village 175",
+        "name": "Ankoli",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 5",
@@ -4456,7 +4458,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 176,
-        "name": "Village 176",
+        "name": "Adawal",
         "state": "Chhattisgarh",
         "district": "Bastar",
         "block": "Bastar Block 3",
@@ -4481,7 +4483,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 177,
-        "name": "Village 177",
+        "name": "Ramkrishnapur",
         "state": "Tripura",
         "district": "Khowai",
         "block": "Khowai Block 5",
@@ -4505,7 +4507,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 178,
-        "name": "Village 178",
+        "name": "Banduda",
         "state": "Odisha",
         "district": "Mayurbhanj",
         "block": "Mayurbhanj Block 5",
@@ -4529,7 +4531,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 179,
-        "name": "Village 179",
+        "name": "Chanda",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 3",
@@ -4554,7 +4556,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 180,
-        "name": "Village 180",
+        "name": "Barakhatanga",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 1",
@@ -4581,7 +4583,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 181,
-        "name": "Village 181",
+        "name": "Briddhanagar",
         "state": "Tripura",
         "district": "West Tripura",
         "block": "West Tripura Block 5",
@@ -4607,7 +4609,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 182,
-        "name": "Village 182",
+        "name": "Battisawargaon",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 5",
@@ -4632,7 +4634,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 183,
-        "name": "Village 183",
+        "name": "Borenur",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 5",
@@ -4655,7 +4657,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 184,
-        "name": "Village 184",
+        "name": "Akhdar",
         "state": "Madhya Pradesh",
         "district": "Dindori",
         "block": "Dindori Block 5",
@@ -4679,7 +4681,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 185,
-        "name": "Village 185",
+        "name": "Bankir",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 4",
@@ -4705,7 +4707,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 186,
-        "name": "Village 186",
+        "name": "Allapalli",
         "state": "Telangana",
         "district": "Bhadradri Kothagudem",
         "block": "Bhadradri Kothagudem Block 2",
@@ -4728,7 +4730,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 187,
-        "name": "Village 187",
+        "name": "Bankir",
         "state": "Jharkhand",
         "district": "Gumla",
         "block": "Gumla Block 2",
@@ -4756,7 +4758,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 188,
-        "name": "Village 188",
+        "name": "Mowad",
         "state": "Telangana",
         "district": "Komaram Bheem",
         "block": "Komaram Bheem Block 5",
@@ -4780,7 +4782,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 189,
-        "name": "Village 189",
+        "name": "Bagra",
         "state": "Chhattisgarh",
         "district": "Surguja",
         "block": "Surguja Block 1",
@@ -4804,7 +4806,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 190,
-        "name": "Village 190",
+        "name": "Ahmadpur",
         "state": "Madhya Pradesh",
         "district": "Mandla",
         "block": "Mandla Block 1",
@@ -4831,7 +4833,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 191,
-        "name": "Village 191",
+        "name": "Aurai",
         "state": "Madhya Pradesh",
         "district": "Dindori",
         "block": "Dindori Block 1",
@@ -4856,7 +4858,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 192,
-        "name": "Village 192",
+        "name": "Bankanda",
         "state": "Odisha",
         "district": "Mayurbhanj",
         "block": "Mayurbhanj Block 4",
@@ -4879,7 +4881,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 193,
-        "name": "Village 193",
+        "name": "Akhdar",
         "state": "Madhya Pradesh",
         "district": "Dindori",
         "block": "Dindori Block 2",
@@ -4905,7 +4907,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 194,
-        "name": "Village 194",
+        "name": "Champabari",
         "state": "Tripura",
         "district": "West Tripura",
         "block": "West Tripura Block 1",
@@ -4932,7 +4934,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 195,
-        "name": "Village 195",
+        "name": "Ada",
         "state": "Telangana",
         "district": "Komaram Bheem",
         "block": "Komaram Bheem Block 1",
@@ -4957,7 +4959,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 196,
-        "name": "Village 196",
+        "name": "Laxmipur",
         "state": "Tripura",
         "district": "West Tripura",
         "block": "West Tripura Block 5",
@@ -4983,7 +4985,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 197,
-        "name": "Village 197",
+        "name": "Ajai",
         "state": "Madhya Pradesh",
         "district": "Betul",
         "block": "Betul Block 3",
@@ -5009,7 +5011,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 198,
-        "name": "Village 198",
+        "name": "Badam",
         "state": "Odisha",
         "district": "Mayurbhanj",
         "block": "Mayurbhanj Block 1",
@@ -5035,7 +5037,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 199,
-        "name": "Village 199",
+        "name": "Basanpur",
         "state": "Chhattisgarh",
         "district": "Dantewada",
         "block": "Dantewada Block 1",
@@ -5061,7 +5063,7 @@ import { Village } from '@/lib/types';\n\nexport const villageData: Village[] = 
     },
     {
         "id": 200,
-        "name": "Village 200",
+        "name": "Battisawargaon",
         "state": "Telangana",
         "district": "Adilabad",
         "block": "Adilabad Block 2",
