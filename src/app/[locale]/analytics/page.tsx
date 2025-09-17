@@ -15,8 +15,8 @@ const timelineData = {
     datasets: [{
         label: 'Title Distribution Progress',
         data: [25.3, 32.1, 38.7, 44.2, 49.02],
-        borderColor: '#1FB8CD',
-        backgroundColor: 'rgba(31, 184, 205, 0.1)',
+        borderColor: 'rgb(79, 112, 255)',
+        backgroundColor: 'rgba(79, 112, 255, 0.1)',
         fill: true,
         tension: 0.4
     }]
@@ -48,7 +48,14 @@ export default function AnalyticsPage() {
                 datasets: [{
                     label: 'Number of Villages',
                     data: Object.values(coverageByState),
-                    backgroundColor: ['#1FB8CD', '#FFC185', '#B4413C', '#ECEBD5', '#ABCDEF', '#FEDCBA']
+                    backgroundColor: [
+                        'rgb(86, 137, 255)',
+                        'rgb(0, 158, 110)',
+                        'rgb(238, 125, 0)',
+                        'rgb(255, 0, 159)',
+                        'rgb(0, 162, 185)',
+                        'rgb(86, 137, 255)'
+                    ]
                 }]
             }
         };
