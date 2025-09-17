@@ -9,13 +9,12 @@ import {
 	ArcElement,
 	Tooltip,
 	Legend,
-	PointElement,
-	LineElement,
-	RadialLinearScale,
 } from "chart.js";
 import { Bar, Doughnut } from "react-chartjs-2";
 import { FileText, BadgeCheck, Clock, Users, Download } from "lucide-react";
 import { useTheme } from "@/components/ui/theme-provider";
+import { villages, dajguaSchemes } from "@/lib/data";
+import { useMemo } from "react";
 
 ChartJS.register(
 	CategoryScale,
@@ -23,57 +22,67 @@ ChartJS.register(
 	BarElement,
 	ArcElement,
 	Tooltip,
-	Legend,
-	PointElement,
-	LineElement,
-	RadialLinearScale
+	Legend
 );
-
-const metricCards = [
-  { label: "Total Claims", value: "5,123,104", icon: FileText, color: "bg-blue-500" },
-  { label: "Titles Distributed", value: "2,511,375", icon: BadgeCheck, color: "bg-green-500" },
-  { label: "Pending Cases", value: "14.63%", icon: Clock, color: "bg-yellow-500" },
-  { label: "Villages Mapped", value: "63.2%", icon: Users, color: "bg-indigo-500" },
-];
-
-const stateBarData = {
-	labels: ["Madhya Pradesh", "Odisha", "Telangana", "Tripura"],
-	datasets: [
-		{
-			label: "Claims Received",
-			data: [627000, 720000, 655000, 128032],
-			backgroundColor: "#1FB8CD",
-		},
-		{
-			label: "Titles Distributed",
-			data: [294000, 461013, 230735, 127931],
-			backgroundColor: "#FFC185",
-		},
-	],
-};
-
-const claimsDoughnutData = {
-	labels: ["Individual Claims", "Community Claims"],
-	datasets: [
-		{
-			data: [4911495, 211609],
-			backgroundColor: ["#1FB8CD", "#FFC185"],
-			borderWidth: 2,
-		},
-	],
-};
-
-const dajguaSchemes = [
-    { name: "PM-KISAN", description: "Direct income support to farmers", benefit: "Rs. 6000 per year" },
-    { name: "Jal Jeevan Mission", description: "Piped water supply to every rural household", benefit: "Functional household tap connections" },
-    { name: "MGNREGA", description: "Employment guarantee scheme", benefit: "100 days guaranteed employment" },
-    { name: "PM Awas Yojana", description: "Housing for all rural households", benefit: "Rs. 1.2 lakh for plains, Rs. 1.3 lakh for hilly areas" },
-    { name: "Ayushman Bharat", description: "Health insurance coverage", benefit: "Rs. 5 lakh annual coverage" }
-];
-
 
 export default function Home() {
     const { theme } = useTheme();
+
+    const stats = useMemo(() => {
+        const totalClaims = villages.reduce((acc, v) => acc + v.ifr_pattas + v.cfr_pattas, 0);
+        const titlesDistributed = villages.reduce((acc, v) => acc + v.ifr_pattas, 0);
+        const pendingCases = villages.filter(v => v.type === 'pending').length;
+        const villagesMapped = villages.length;
+        return {
+            totalClaims,
+            titlesDistributed,
+            pendingCases: ((pendingCases / villagesMapped) * 100).toFixed(2) + '%',
+            villagesMapped,
+        }
+    }, []);
+
+    const metricCards = [
+      { label: "Total Claims", value: stats.totalClaims.toLocaleString(), icon: FileText, color: "bg-blue-500" },
+      { label: "Titles Distributed", value: stats.titlesDistributed.toLocaleString(), icon: BadgeCheck, color: "bg-green-500" },
+      { label: "Pending Cases", value: stats.pendingCases, icon: Clock, color: "bg-yellow-500" },
+      { label: "Villages Mapped", value: stats.villagesMapped.toString(), icon: Users, color: "bg-indigo-500" },
+    ];
+
+    const stateBarData = useMemo(() => {
+        const states = [...new Set(villages.map(v => v.state))];
+        const claimsReceived = states.map(s => villages.filter(v => v.state === s).reduce((acc, v) => acc + v.ifr_pattas + v.cfr_pattas, 0));
+        const titlesDistributed = states.map(s => villages.filter(v => v.state === s).reduce((acc, v) => acc + v.ifr_pattas, 0));
+        return {
+            labels: states,
+            datasets: [
+                {
+                    label: "Claims Received",
+                    data: claimsReceived,
+                    backgroundColor: "#1FB8CD",
+                },
+                {
+                    label: "Titles Distributed",
+                    data: titlesDistributed,
+                    backgroundColor: "#FFC185",
+                },
+            ],
+        };
+    }, []);
+
+    const claimsDoughnutData = useMemo(() => {
+        const individualClaims = villages.reduce((acc, v) => acc + v.ifr_pattas, 0);
+        const communityClaims = villages.reduce((acc, v) => acc + v.cfr_pattas, 0);
+        return {
+            labels: ["Individual Claims", "Community Claims"],
+            datasets: [
+                {
+                    data: [individualClaims, communityClaims],
+                    backgroundColor: ["#1FB8CD", "#FFC185"],
+                    borderWidth: 2,
+                },
+            ],
+        };
+    }, []);
 
     const stateBarOptions = {
         responsive: true,
@@ -120,10 +129,7 @@ export default function Home() {
 				<div className="flex gap-2">
 					<select className="form-select bg-background border border-input rounded-md px-3 py-2">
 						<option value="">All States</option>
-						<option value="madhya_pradesh">Madhya Pradesh</option>
-						<option value="odisha">Odisha</option>
-						<option value="telangana">Telangana</option>
-						<option value="tripura">Tripura</option>
+						{[...new Set(villages.map(v => v.state))].map(s => <option key={s} value={s.toLowerCase().replace(" ", "_")}>{s}</option>)}
 					</select>
 					<button className="btn btn-primary inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md">
 						<Download className="h-4 w-4" />
@@ -185,7 +191,6 @@ export default function Home() {
                             <div key={idx} className="p-4 rounded-lg border bg-card text-card-foreground shadow-sm">
                                 <h3 className="font-semibold text-primary">{scheme.name}</h3>
                                 <p className="text-sm text-muted-foreground mt-1">{scheme.description}</p>
-                                <p className="text-sm font-medium mt-2"><strong>Benefit:</strong> {scheme.benefit}</p>
                             </div>
                         ))}
                     </div>

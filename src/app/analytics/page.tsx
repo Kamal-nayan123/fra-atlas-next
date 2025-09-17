@@ -5,36 +5,10 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, PointElement,
 import { Bar, Line } from 'react-chartjs-2';
 import { ArrowUp, Minus, ArrowDown } from 'lucide-react';
 import { useTheme } from '@/components/ui/theme-provider';
+import { villages } from '@/lib/data';
+import { useMemo } from 'react';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, PointElement, LineElement, Tooltip, Legend);
-
-const kpiData = [
-    { indicator: "FRA Title Distribution Rate", target: 75, current: 49.02, trend: "improving" },
-    { indicator: "Document Digitization Progress", target: 100, current: 23.4, trend: "steady" },
-    { indicator: "Scheme Convergence Rate", target: 85, current: 34.7, trend: "improving" },
-    { indicator: "Village Atlas Coverage", target: 100, current: 63.2, trend: "rapid" },
-];
-
-const timelineData = {
-    labels: ['2020', '2021', '2022', '2023', '2024'],
-    datasets: [{
-        label: 'Title Distribution Progress',
-        data: [25.3, 32.1, 38.7, 44.2, 49.02],
-        borderColor: '#1FB8CD',
-        backgroundColor: 'rgba(31, 184, 205, 0.1)',
-        fill: true,
-        tension: 0.4
-    }]
-};
-
-const coverageData = {
-    labels: ['Madhya Pradesh', 'Odisha', 'Telangana', 'Tripura'],
-    datasets: [{
-        label: 'Village Coverage %',
-        data: [45.2, 78.9, 56.7, 89.3],
-        backgroundColor: ['#1FB8CD', '#FFC185', '#B4413C', '#ECEBD5']
-    }]
-};
 
 const TrendIcon = ({ trend }: { trend: string }) => {
     if (trend === 'improving' || trend === 'rapid') return <ArrowUp className="h-4 w-4 text-green-500" />;
@@ -44,6 +18,43 @@ const TrendIcon = ({ trend }: { trend: string }) => {
 
 export default function AnalyticsPage() {
     const { theme } = useTheme();
+
+    const kpiData = useMemo(() => {
+        const totalClaims = villages.reduce((acc, v) => acc + v.ifr_pattas + v.cfr_pattas, 0);
+        const titlesDistributed = villages.reduce((acc, v) => acc + v.ifr_pattas, 0);
+        const distributionRate = (titlesDistributed / totalClaims) * 100;
+        return [
+            { indicator: "FRA Title Distribution Rate", target: 75, current: distributionRate.toFixed(2), trend: "improving" },
+            { indicator: "Document Digitization Progress", target: 100, current: 23.4, trend: "steady" },
+            { indicator: "Scheme Convergence Rate", target: 85, current: 34.7, trend: "improving" },
+            { indicator: "Village Atlas Coverage", target: 100, current: ((villages.length / 200) * 100).toFixed(2), trend: "rapid" },
+        ];
+    }, []);
+
+    const timelineData = {
+        labels: ['2020', '2021', '2022', '2023', '2024'],
+        datasets: [{
+            label: 'Title Distribution Progress',
+            data: [25.3, 32.1, 38.7, 44.2, 49.02],
+            borderColor: '#1FB8CD',
+            backgroundColor: 'rgba(31, 184, 205, 0.1)',
+            fill: true,
+            tension: 0.4
+        }]
+    };
+
+    const coverageData = useMemo(() => {
+        const states = [...new Set(villages.map(v => v.state))];
+        const coverage = states.map(s => villages.filter(v => v.state === s).length);
+        return {
+            labels: states,
+            datasets: [{
+                label: 'Village Coverage',
+                data: coverage,
+                backgroundColor: ['#1FB8CD', '#FFC185', '#B4413C', '#ECEBD5', '#8EA2C6', '#2E4A62']
+            }]
+        };
+    }, []);
 
     const chartOptions = {
         responsive: true,

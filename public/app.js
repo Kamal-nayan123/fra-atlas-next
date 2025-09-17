@@ -754,7 +754,7 @@ function handleFileSelect(e) {
     processDocuments(files);
 }
 
-function processDocuments() {
+function processDocuments(files) {
     const extractedDataDiv = document.getElementById('extractedData');
     if (!extractedDataDiv) return;
     

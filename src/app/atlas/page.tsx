@@ -1,13 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
-
-const villages = [
-    { id: 1, name: "Jhirkapur", state: "Madhya Pradesh", district: "Dindori", ifr_pattas: 45, cfr_pattas: 2, total_population: 1200, lat: 22.9676, lng: 81.0082, type: 'ifr' },
-    { id: 2, name: "Bamungaon", state: "Tripura", district: "Khowai", ifr_pattas: 34, cfr_pattas: 1, total_population: 743, lat: 24.0633, lng: 91.6764, type: 'cfr' },
-    { id: 3, name: "Kendumundi", state: "Odisha", district: "Mayurbhanj", ifr_pattas: 78, cfr_pattas: 3, total_population: 1567, lat: 22.1061, lng: 86.4056, type: 'ifr' },
-    { id: 4, name: "Kondapuram", state: "Telangana", district: "Adilabad", ifr_pattas: 56, cfr_pattas: 2, total_population: 1045, lat: 19.4978, lng: 79.3176, type: 'pending' },
-];
+import { villages } from "@/lib/data";
 
 const AtlasMap = dynamic(() => import("@/components/atlas-map"), {
     ssr: false,
@@ -18,6 +12,9 @@ export default function AtlasPage() {
 	const [stateFilter, setStateFilter] = useState<string>("");
     const [districtFilter, setDistrictFilter] = useState<string>("");
 	const [search, setSearch] = useState<string>("");
+    const [showIFR, setShowIFR] = useState(true);
+    const [showCFR, setShowCFR] = useState(true);
+    const [showCFRR, setShowCFRR] = useState(true);
 
 	const states = useMemo(() => Array.from(new Set(villages.map(v => v.state))), []);
     const districts = useMemo(() => {
@@ -26,12 +23,16 @@ export default function AtlasPage() {
     }, [stateFilter]);
 
 	const filteredVillages = useMemo(() => {
-		return villages.filter(v =>
-            (!stateFilter || v.state === stateFilter) &&
-            (!districtFilter || v.district === districtFilter) &&
-            (!search || v.name.toLowerCase().includes(search.toLowerCase()))
-        );
-	}, [stateFilter, districtFilter, search]);
+		return villages.filter(v => {
+            const type = v.type;
+            if (!showIFR && type === 'ifr') return false;
+            if (!showCFR && type === 'cfr') return false;
+            if (!showCFRR && type === 'community_forest_resource') return false;
+            return (!stateFilter || v.state === stateFilter) &&
+                (!districtFilter || v.district === districtFilter) &&
+                (!search || v.name.toLowerCase().includes(search.toLowerCase()))
+        });
+	}, [stateFilter, districtFilter, search, showIFR, showCFR, showCFRR]);
 
 	return (
 		<div className="flex h-screen">
@@ -41,12 +42,16 @@ export default function AtlasPage() {
                 <div className="mb-4">
                     <h3 className="font-semibold mb-2">Map Layers</h3>
                     <div className="flex items-center">
-                        <input type="checkbox" id="ifrLayer" className="mr-2" defaultChecked />
+                        <input type="checkbox" id="ifrLayer" className="mr-2" checked={showIFR} onChange={() => setShowIFR(!showIFR)} />
                         <label htmlFor="ifrLayer">Individual Forest Rights (IFR)</label>
                     </div>
                     <div className="flex items-center">
-                        <input type="checkbox" id="cfrLayer" className="mr-2" defaultChecked />
+                        <input type="checkbox" id="cfrLayer" className="mr-2" checked={showCFR} onChange={() => setShowCFR(!showCFR)} />
                         <label htmlFor="cfrLayer">Community Forest Rights (CFR)</label>
+                    </div>
+                    <div className="flex items-center">
+                        <input type="checkbox" id="cfrrLayer" className="mr-2" checked={showCFRR} onChange={() => setShowCFRR(!showCFRR)} />
+                        <label htmlFor="cfrrLayer">Community Forest Resource Rights</label>
                     </div>
                 </div>
 
