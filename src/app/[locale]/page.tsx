@@ -3,7 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, ArcElement, Tooltip, Legend } from "chart.js";
 import { Bar, Doughnut } from "react-chartjs-2";
-import { FileText, BadgeCheck, Clock, Users, Download, Leaf, Home, Users2 } from "lucide-react";
+import { FileText, BadgeCheck, Clock, Users, Download, Leaf, Home as HomeIcon, Users2 } from "lucide-react";
 import { useTheme } from "@/components/ui/theme-provider";
 import { useMemo } from "react";
 import { villageData } from "@/lib/village-data";
@@ -39,7 +39,7 @@ export default function Home() {
 
         return {
             metricCards: [
-                { label: "Villages Mapped", value: totalVillages.toLocaleString(), icon: Home, color: "text-chart-1" },
+                { label: "Villages Mapped", value: totalVillages.toLocaleString(), icon: HomeIcon, color: "text-chart-1" },
                 { label: "IFR Titles", value: totalIfr.toLocaleString(), icon: Users2, color: "text-chart-2" },
                 { label: "CFR Titles", value: totalCfr.toLocaleString(), icon: Users, color: "text-chart-3" },
                 { label: "CFRR Titles", value: totalCfrr.toLocaleString(), icon: Leaf, color: "text-chart-4" },
