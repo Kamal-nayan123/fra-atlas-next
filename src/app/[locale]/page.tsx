@@ -3,7 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, ArcElement, Tooltip, Legend } from "chart.js";
 import { Bar, Doughnut } from "react-chartjs-2";
-import { FileText, BadgeCheck, Clock, Users, Download, Leaf, Home, Users2 } from "lucide-react";
+import { Users, Download, Leaf, Home, Users2 } from "lucide-react";
 import { useTheme } from "@/components/ui/theme-provider";
 import { useMemo } from "react";
 import { villageData } from "@/lib/village-data";
@@ -18,7 +18,7 @@ const dajguaSchemes = [
     { name: "Ayushman Bharat", description: "Health insurance coverage", benefit: "Rs. 5 lakh annual coverage" }
 ];
 
-export default function Home() {
+export default function Dashboard() {
     const { theme } = useTheme();
 
     const analytics = useMemo(() => {

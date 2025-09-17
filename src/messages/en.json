@@ -1,0 +1,8 @@
+{
+  "Navigation": {
+    "dashboard": "Dashboard",
+    "atlas": "Atlas",
+    "dss": "DSS",
+    "analytics": "Analytics"
+  }
+}
